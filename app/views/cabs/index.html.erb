@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cabs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Car</th>
+      <th>Driver</th>
+      <th>Location</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cabs.each do |cab| %>
+      <tr>
+        <td><%= cab.car_id %></td>
+        <td><%= cab.driver_id %></td>
+        <td><%= cab.location %></td>
+        <td><%= link_to 'Show', cab %></td>
+        <td><%= link_to 'Edit', edit_cab_path(cab) %></td>
+        <td><%= link_to 'Destroy', cab, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cab', new_cab_path %>

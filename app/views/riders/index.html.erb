@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Riders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Mobile number</th>
+      <th>Location</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @riders.each do |rider| %>
+      <tr>
+        <td><%= rider.name %></td>
+        <td><%= rider.mobile_number %></td>
+        <td><%= rider.location %></td>
+        <td><%= link_to 'Show', rider %></td>
+        <td><%= link_to 'Edit', edit_rider_path(rider) %></td>
+        <td><%= link_to 'Destroy', rider, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rider', new_rider_path %>

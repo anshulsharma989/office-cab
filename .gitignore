@@ -31,3 +31,6 @@ yarn-debug.log*
 .yarn-integrity
 /config/database.yml
 vendor
+
+# Ignore sqlite db file.
+db/development.sqlite3

@@ -12,18 +12,18 @@
 
 ActiveRecord::Schema.define(version: 2019_11_07_060131) do
 
-  create_table "cab_riders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "cab_id", null: false
-    t.bigint "rider_id", null: false
+  create_table "cab_riders", force: :cascade do |t|
+    t.integer "cab_id", null: false
+    t.integer "rider_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["cab_id"], name: "index_cab_riders_on_cab_id"
     t.index ["rider_id"], name: "index_cab_riders_on_rider_id"
   end
 
-  create_table "cabs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "car_id", null: false
-    t.bigint "driver_id", null: false
+  create_table "cabs", force: :cascade do |t|
+    t.integer "car_id", null: false
+    t.integer "driver_id", null: false
     t.string "location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2019_11_07_060131) do
     t.index ["driver_id"], name: "index_cabs_on_driver_id"
   end
 
-  create_table "cars", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "cars", force: :cascade do |t|
     t.string "model"
     t.string "number"
     t.string "year"
@@ -41,14 +41,14 @@ ActiveRecord::Schema.define(version: 2019_11_07_060131) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "drivers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "drivers", force: :cascade do |t|
     t.string "name"
     t.string "mobile_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "riders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "riders", force: :cascade do |t|
     t.string "name"
     t.string "mobile_number"
     t.string "location"

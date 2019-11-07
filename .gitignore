@@ -29,7 +29,6 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
-/config/database.yml
 vendor
 Gemfile.lock
 # Ignore sqlite db file.

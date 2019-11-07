@@ -5,6 +5,10 @@ class CabsController < ApplicationController
   # GET /cabs.json
   def index
     @cabs = Cab.all
+    respond_to do |format|
+      format.html { @cabs }
+      format.json { render json: @cabs}
+    end
   end
 
   # GET /cabs/1
